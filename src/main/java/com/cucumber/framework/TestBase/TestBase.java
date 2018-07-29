@@ -84,10 +84,10 @@ public class TestBase {
 	@Before()
 	public void before() throws Exception {
 		ObjectRepo.reader = new PropertyFileReader();
-		String browser=System.getProperty("Browser");
-		setUpDriver(BrowserType.valueOf(browser));
-		//setUpDriver(ObjectRepo.reader.getBrowser());
-		//log.info(ObjectRepo.reader.getBrowser());
+		/*String browser=System.getProperty("Browser");
+		setUpDriver(BrowserType.valueOf(browser));*/  /* Run from jenkins*/
+		setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
+		log.info(ObjectRepo.reader.getBrowser());     //Run from Local 
 	}
 
 	@After()
@@ -95,8 +95,8 @@ public class TestBase {
 		 if (scenario.isFailed()) {
 	         scenario.embed(((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES), "image/png");
 	        }
-		driver.quit();
-		log.info("Browser closed");
+	/*	driver.quit();
+		log.info("Browser closed");*/
 		
 	 }
 	

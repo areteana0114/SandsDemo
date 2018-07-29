@@ -26,8 +26,8 @@ public class LoginTest {
 	public void steps_for_login_in_case_of_failure() throws Throwable {
 	  System.out.println("Steps to reproduce:");
 	  System.out.println("Open the browser and navigate to the url");
-	  System.out.println("I enter username as 'csinboundagent'");
-	  System.out.println("I enter password as 'rules'");
+	  System.out.println("I enter username as 'UWServices'");
+	  System.out.println("I enter password as 'Welcoome1@'");
 	  System.out.println("I click on Login button");
 	  System.out.println("Login should be successful");
 	}
@@ -35,8 +35,8 @@ public class LoginTest {
 	@Given("^Open the browser and navigate to the url$")
 	public void open_the_browser_and_navigate_to_the_url() throws Throwable {
 		//System.out.println("Before driver instantiation: "+TestBase.getDriver());
-		//TestBase.getDriver().get(ObjectRepo.reader.getWebsite());
-		TestBase.getDriver().get(System.getProperty("URL"));
+		TestBase.getDriver().get(ObjectRepo.reader.getWebsite()); //Run from local
+		//TestBase.getDriver().get(System.getProperty("URL"));  //Run from jenkins
 		loginpage=new LoginPage(TestBase.getDriver());
 		loginpage.sendLoginObject(loginpage);
 		//System.out.println("After driver instantiation: " +TestBase.getDriver());

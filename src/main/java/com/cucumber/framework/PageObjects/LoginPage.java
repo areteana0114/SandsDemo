@@ -62,16 +62,9 @@ public class LoginPage extends CustomerServ implements LoginPageLoc{
 		return new HomePage(driver);
 	}
 	
-	public boolean verifyMsg() {
+	public void verifyMsg() {
 		
-		try {
-		Assert.assertTrue(driver.findElement(By.xpath(verify_msg_xpath)).getText().contains("CS Inbound Officer (Loan, Card)"),"Login is not successful");
-		//System.out.println("verify message method" +driver);
-		return true;
-		}catch(Exception e) {
-		return false;
-		}
-		
+		Assert.assertTrue(driver.findElement(By.xpath(verify_msg_xpath)).getText().contains("UW Services"),"Login is not successful");	
 	}
 	
 	public void verifyLoginFail() {

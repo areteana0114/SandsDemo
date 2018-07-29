@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SmokeSuite" parallel="false" >
 
-	<test name="FE_CREDIT_Chrome">
+	<test name="Login">
 		<classes>
-			<class name="com.cucumber.framework.runner.CommonRunner" />
+			<class name="com.cucumber.framework.runner.LoginRunner" />
 		</classes>
 	</test>
 	
