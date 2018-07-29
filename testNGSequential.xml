@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" parallel="false" >
+
+	<test name="FE_CREDIT_Chrome">
+		<classes>
+			<class name="com.cucumber.framework.runner.CommonRunner" />
+		</classes>
+	</test>
+	
+	
+</suite> 

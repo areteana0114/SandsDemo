@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" parallel="classes" thread-count="3">
+
+
+
+	<test name="FE_CREDIT_Classes">
+		<classes>
+			<class name="com.cucumber.framework.runner.PulseRunner" />
+			<class name="com.cucumber.framework.runner.SearchRunner" />
+			<class name="com.cucumber.framework.runner.LogoutRunner" />
+		</classes>
+	</test>
+
+
+
+
+</suite> 
