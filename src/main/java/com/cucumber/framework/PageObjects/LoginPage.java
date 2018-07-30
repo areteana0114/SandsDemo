@@ -46,7 +46,7 @@ public class LoginPage extends CustomerServ implements LoginPageLoc{
 		return new LoginPage(driver);
 	}
 	
-	public HomePage clickOnLoginbtn() {
+	public void clickOnLoginbtn() {
 		WebElement login_btn=driver.findElement(By.xpath(login_btn_xpath));
 		loginpage.waitForElement(login_btn, 3);
 		login_btn.click();
@@ -59,12 +59,13 @@ public class LoginPage extends CustomerServ implements LoginPageLoc{
 	    }catch(Exception e) {
 	    	System.out.println("No such element present");
 	    }
-		return new HomePage(driver);
+		
 	}
 	
 	public void verifyMsg() {
 		
 		Assert.assertTrue(driver.findElement(By.xpath(verify_msg_xpath)).getText().contains("UW Services"),"Login is not successful");	
+		
 	}
 	
 	public void verifyLoginFail() {

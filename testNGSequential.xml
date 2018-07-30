@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SmokeSuite" parallel="false" >
 
-	<test name="Login">
+	<test name="Preassessment">
 		<classes>
-			<class name="com.cucumber.framework.runner.LoginRunner" />
+			<class name="com.cucumber.framework.runner.PreassessmentRunner" />
 		</classes>
 	</test>
 	

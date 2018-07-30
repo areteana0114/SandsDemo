@@ -95,8 +95,8 @@ public class TestBase {
 		 if (scenario.isFailed()) {
 	         scenario.embed(((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES), "image/png");
 	        }
-	/*	driver.quit();
-		log.info("Browser closed");*/
+		driver.quit();
+		log.info("Browser closed");
 		
 	 }
 	

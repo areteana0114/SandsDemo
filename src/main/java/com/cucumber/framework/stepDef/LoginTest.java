@@ -56,7 +56,7 @@ public class LoginTest {
 
 	@When("^I click on Login button$")
 	public void i_click_on_Login_button() throws Throwable {
-	homepage=loginpage.clickOnLoginbtn();
+	loginpage.clickOnLoginbtn();
 	//System.out.println("click on login " +TestBase.getDriver());
 	
 	}

@@ -3,6 +3,11 @@ Feature: Validate the Pre-Assessment feature
   #Author U.Ramakrishna
   @smoke @Regression
   Scenario: Validate the case status when benefit is Life,Make Decision is Outcome and Decision is Standard.
+    Given Open the browser and navigate to the url
+    When I enter username as "UWServices"
+    And I enter password as "Welcome1@"
+    And I click on Login button
+    Then Login should be successful
     Given Click on create button
     When Click on Pre-assessment button
     Then New Pre-assessment page should be displayed
