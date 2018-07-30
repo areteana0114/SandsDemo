@@ -22,7 +22,7 @@ public class PreassessmentTest {
 	public void click_on_create_button() throws Throwable {
 		preassessmentpage=new PreassessmentPage(TestBase.getDriver());		
 		preassessmentpage.sendPreassessmentObject(preassessmentpage);
-		preassessmentpage.clickOnCreateButton();
+		preassessmentpage.clickOnCreateMenuButton();
 		
 	}
 
@@ -33,62 +33,63 @@ public class PreassessmentTest {
 
 	@Then("^New Pre-assessment page should be displayed$")
 	public void new_Pre_assessment_page_should_be_displayed() throws Throwable {
-	  
+		 preassessmentpage.verifyUserInPreassessPage();
 	}
 
 	@When("^User enters firstname and lastname$")
 	public void user_enters_firstname_and_lastname() throws Throwable {
-	  
+		 preassessmentpage.enterFirstName();
+		 preassessmentpage.enterLastName();
 	}
 
 	@When("^Selects Smoker status as \"([^\"]*)\"$")
 	public void selects_Smoker_status_as(String arg1) throws Throwable {
-	    
+		 preassessmentpage.selectSmokerStatus();
 	}
 
 	@When("^Adviser Name as \"([^\"]*)\"$")
-	public void adviser_Name_as(String arg1) throws Throwable {
-	    
+	public void adviser_Name_as(String advisername) throws Throwable {
+		 preassessmentpage.selectAdviserName(advisername);
 	}
 
 	@When("^Default line of business selected is Retail$")
 	public void default_line_of_business_selected_is_Retail() throws Throwable {
-	   
+	   System.out.println("LOB is Retail");
 	}
 
 	@When("^User enters disclosure$")
 	public void user_enters_disclosure() throws Throwable {
-	   
+		preassessmentpage.enterTextIntoDisclosure();
 	}
 
 	@When("^selects benefit as life$")
 	public void selects_benefit_as_life() throws Throwable {
-	    
+		preassessmentpage.selectBenefitLife();
 	}
 
 	@When("^Make Decision as \"([^\"]*)\"$")
-	public void make_Decision_as(String arg1) throws Throwable {
-	   
+	public void make_Decision_as(String makedecision) throws Throwable {
+		preassessmentpage.selectMakeDecisionValue(makedecision);
 	}
 
 	@When("^Decision as \"([^\"]*)\"$")
-	public void decision_as(String arg1) throws Throwable {
-	 
+	public void decision_as(String decisionvalue) throws Throwable {
+		preassessmentpage.selectDecision(decisionvalue);
 	}
 
 	@When("^Enters Sum Insured under life as \"([^\"]*)\"$")
-	public void enters_Sum_Insured_under_life_as(String arg1) throws Throwable {
-	   
+	public void enters_Sum_Insured_under_life_as(String suminsured) throws Throwable {
+		preassessmentpage.enterSumInsured(suminsured);
 	}
 
 	@When("^Clicks on Create button$")
 	public void clicks_on_Create_button() throws Throwable {
-	  
+		preassessmentpage.clickOnCreateBtn();
 	}
 
 	@Then("^status of the case should be \"([^\"]*)\"$")
-	public void status_of_the_case_should_be(String arg1) throws Throwable {
-	   
+	public void status_of_the_case_should_be(String status) throws Throwable {
+		preassessmentpage.verifyCaseStatus(status);
 	}
 
 
