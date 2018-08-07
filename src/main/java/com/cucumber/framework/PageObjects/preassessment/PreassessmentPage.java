@@ -9,11 +9,15 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.cucumber.framework.CS.CustomerServ;
+import com.cucumber.framework.PageObjects.LoginPage;
 import com.cucumber.framework.helper.Logger.LoggerHelper;
 
 public class PreassessmentPage extends CustomerServ implements PreassessmentPageLoc{
 	private final Logger log = LoggerHelper.getLogger(PreassessmentPage.class);
 	PreassessmentPage preassessmentpage;
+	LoginPage loginpage;
+	String caseid=null;
+	String operator=null;
 	
 	public PreassessmentPage(WebDriver driver) {
 		super(driver);
@@ -115,6 +119,7 @@ public class PreassessmentPage extends CustomerServ implements PreassessmentPage
 	public void clickOnCreateBtn() {
 		WebElement create_button=driver.findElement(By.xpath(create_btn_xpath));
 		preassessmentpage.waitForElement(create_button, 3);
+		Assert.assertTrue(create_button.isDisplayed(), "Create button doesn't exists");
 		create_button.click();
 	    waitFor(2);
 	}
@@ -122,8 +127,49 @@ public class PreassessmentPage extends CustomerServ implements PreassessmentPage
 	public void verifyCaseStatus(String status) {
 		WebElement case_status=driver.findElement(By.xpath(case_status_xpath));
 		preassessmentpage.waitForElement(case_status, 3);
-		Assert.assertTrue(case_status.getText().equals(status), "status of the case is "+case_status.getText());
+		Assert.assertTrue(case_status.getText().trim().equalsIgnoreCase(status), "status of the case is "+case_status.getText());
 	    waitFor(3);
 	    System.out.println(case_status.getText());
+	}
+	
+	public void getCaseId() {
+		WebElement caseId=driver.findElement(By.xpath(case_id_xpath));
+		preassessmentpage.waitForElement(caseId, 3);
+		String cid=caseId.getText();
+		caseid=cid.substring(1, 8);
+		System.out.println(caseid);
+	    waitFor(3);
+	}
+	
+	public void captureLogPAOperator() {
+		operator=preassessmentpage.getSelectedElementText(logpa_oper_xpath, 0);
+		System.out.println(operator);
+	    waitFor(3);
+	   
+	}
+	
+	public void logout() {
+		preassessmentpage.switchToDefaultContent();
+		waitFor(3);
+		WebElement searchtxtbox=driver.findElement(By.xpath("//input[@id='pySearchText' and @title='Enter text to search']"));
+		searchtxtbox.sendKeys("hi");
+		waitFor(5);
+		preassessmentpage.clickOnSelectedElement(logout_image_xpath, 1);
+		waitFor(3);
+		WebElement logout=driver.findElement(By.xpath(logoff_xpath));
+		preassessmentpage.waitForElement(logout, 3);
+		logout.click();
+		waitFor(10);
+	}
+	
+	public void loginPAOperator() {
+		//loginpage=new LoginPage(driver);
+		if(operator.equalsIgnoreCase("Melvin Goh")) {
+			System.out.println(operator);
+			loginpage.setUserName("mgoh");
+			loginpage.setPassword("Welcome1@");
+			loginpage.clickOnLoginbtn();
+			
+		}
 	}
 }

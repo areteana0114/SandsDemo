@@ -92,6 +92,24 @@ public class PreassessmentTest {
 		preassessmentpage.verifyCaseStatus(status);
 	}
 
+	@Given("^capture the case id$")
+	public void capture_the_case_id() throws Throwable {
+		preassessmentpage.getCaseId();
+	}
 
+	@Given("^capture the Log PA Decison operator id$")
+	public void capture_the_Log_PA_Decison_operator_id() throws Throwable {
+		preassessmentpage.captureLogPAOperator();
+	}
+
+	@Given("^logout of the portal$")
+	public void logout_of_the_portal() throws Throwable {
+		preassessmentpage.logout();
+	}
+	
+	@Given("^Login with LogPAOperator$")
+	public void login_with_LogPAOperator() throws Throwable {
+		preassessmentpage.loginPAOperator();
+	}
 
 }

@@ -230,6 +230,13 @@ public class SeleniumFunc implements SeleniumFuncLoc {
 			clickUsingAction(elements.get(i));
 	    }
 		
+		public String getSelectedElementText(String expath,int i) {
+			List<WebElement> elements=driver.findElements(By.xpath(expath));
+			System.out.println(elements.size());
+			String text=elements.get(i).getText();
+			return text;
+	    }
+		
 		public void clickUsingAction(WebElement element) {
 			Actions action=new Actions(driver);
 			action.moveToElement(element).click().build().perform();

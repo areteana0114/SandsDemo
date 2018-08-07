@@ -16,5 +16,9 @@ public interface PreassessmentPageLoc {
 	String suminsuredlife_xpath="//input[@id='SumInsured']";
 	String create_btn_xpath="//button[@title='Create this item']";
 	String case_status_xpath="//a[@class='ellipsis']";
+	String case_id_xpath="//span[@class='workarea_header_id']";
+	String logpa_oper_xpath="//span[@class='supporting_text']";
+	String logout_image_xpath="//a[@class='Header_nav']";
+	String logoff_xpath="//span[@class='menu-item-title' and text()='Log off']";
 
 }
