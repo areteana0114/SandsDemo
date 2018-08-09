@@ -84,10 +84,10 @@ public class TestBase {
 	@Before()
 	public void before() throws Exception {
 		ObjectRepo.reader = new PropertyFileReader();
-		/*String browser=System.getProperty("Browser");
-		setUpDriver(BrowserType.valueOf(browser));*/  /* Run from jenkins*/
-		setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
-		log.info(ObjectRepo.reader.getBrowser());     //Run from Local 
+		String browser=System.getProperty("Browser");
+		setUpDriver(BrowserType.valueOf(browser));  /* Run from jenkins*/
+		//setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
+		//log.info(ObjectRepo.reader.getBrowser());     //Run from Local 
 	}
 
 	@After()

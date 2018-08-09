@@ -7,6 +7,6 @@
 			<class name="com.cucumber.framework.runner.PreassessmentRunner" />
 		</classes>
 	</test>
-	
+
 	
 </suite> 

@@ -67,28 +67,28 @@ Feature: Validate the Pre-Assessment feature
   #    And Clicks on Create button
   #    Then status of the case should be "Resolved-Completed"
   #Author U.Ramakrishna
-  #  @smoke @Regression
-  #  Scenario: Validate the case status when benefit is Life,Make Decision is Outcome and Decision is Decline.
-  #    Given Open the browser and navigate to the url
-  #    When I enter username as "UWServices"
-  #    And I enter password as "Welcome1@"
-  #    And I click on Login button
-  #    Then Login should be successful
-  #    Given Click on create button
-  #    When Click on Pre-assessment button
-  #    Then New Pre-assessment page should be displayed
-  #    When User enters firstname and lastname
-  #    And Selects Smoker status as "Smoker"
-  #    And Adviser Name as "10026"
-  #    And Default line of business selected is Retail
-  #    And User enters disclosure
-  #    And selects benefit as life
-  #    And Make Decision as "Outcome"
-  #    And Decision as "Decline"
-  #    And Enters Sum Insured under life as "2000"
-  #    And Clicks on Create button
-  #    Then status of the case should be "Resolved-Declined"
-  
+  @smoke @Regression
+  Scenario: Validate the case status when benefit is Life,Make Decision is Outcome and Decision is Decline.
+    Given Open the browser and navigate to the url
+    When I enter username as "UWServices"
+    And I enter password as "Welcome1@"
+    And I click on Login button
+    Then Login should be successful
+    Given Click on create button
+    When Click on Pre-assessment button
+    Then New Pre-assessment page should be displayed
+    When User enters firstname and lastname
+    And Selects Smoker status as "Smoker"
+    And Adviser Name as "10026"
+    And Default line of business selected is Retail
+    And User enters disclosure
+    And selects benefit as life
+    And Make Decision as "Outcome"
+    And Decision as "Decline"
+    And Enters Sum Insured under life as "2000"
+    And Clicks on Create button
+    Then status of the case should be "Resolved-Declined"
+
   #Author U.Ramakrishna
   @smoke @Regression
   Scenario: Validate the case status when benefit is Life,Make Decision is Refer to underwriter.
