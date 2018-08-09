@@ -116,3 +116,6 @@ Feature: Validate the Pre-Assessment feature
     When I enter username as "mgoh"
     And I enter password as "Welcome1@"
     And I click on Login button
+    And Resolve the case
+    Then status of the case should be "Resolved-Completed"
+    And logout of the portal LogPA Operator

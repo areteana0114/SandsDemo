@@ -20,5 +20,8 @@ public interface PreassessmentPageLoc {
 	String logpa_oper_xpath="//span[@class='supporting_text']";
 	String logout_image_xpath="//a[@class='Header_nav']";
 	String logoff_xpath="//span[@class='menu-item-title' and text()='Log off']";
+	String searchtext_xpath="//input[@id='pySearchText' and @title='Enter text to search']";
+	String logpaoperlink_xpath="//a[contains(text(),'Log PA Decision')]";
+	String submitbtn_xpath="//button[text()='Submit']";
 
 }

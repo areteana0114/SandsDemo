@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -150,9 +151,9 @@ public class PreassessmentPage extends CustomerServ implements PreassessmentPage
 	
 	public void logout() {
 		preassessmentpage.switchToDefaultContent();
-		waitFor(3);
-		WebElement searchtxtbox=driver.findElement(By.xpath("//input[@id='pySearchText' and @title='Enter text to search']"));
-		searchtxtbox.sendKeys("hi");
+	//	waitFor(3);
+	//	WebElement searchtxtbox=driver.findElement(By.xpath("//input[@id='pySearchText' and @title='Enter text to search']"));
+	//	searchtxtbox.sendKeys("hi");
 		waitFor(5);
 		preassessmentpage.clickOnSelectedElement(logout_image_xpath, 1);
 		waitFor(3);
@@ -171,5 +172,37 @@ public class PreassessmentPage extends CustomerServ implements PreassessmentPage
 			loginpage.clickOnLoginbtn();
 			
 		}
+	}
+	
+	public void searchAndResolveCase() {
+		waitFor(3);
+		WebElement searchtxtbox=driver.findElement(By.xpath(searchtext_xpath));
+		searchtxtbox.sendKeys(caseid);
+		waitFor(3);
+		searchtxtbox.sendKeys(Keys.ENTER);
+		waitFor(2);
+		preassessmentpage.goToFrameByName("PegaGadget1Ifr");
+		waitFor(2);
+		WebElement logpaoperlink=driver.findElement(By.xpath(logpaoperlink_xpath));
+		logpaoperlink.click();
+		waitFor(3);
+		WebElement submitbtn=driver.findElement(By.xpath(submitbtn_xpath));
+		submitbtn.click();
+		waitFor(3);
+		
+	}
+	
+	public void logoutOfPAOperator() {
+		preassessmentpage.switchToDefaultContent();
+		//	waitFor(3);
+		//	WebElement searchtxtbox=driver.findElement(By.xpath("//input[@id='pySearchText' and @title='Enter text to search']"));
+		//	searchtxtbox.sendKeys("hi");
+			waitFor(5);
+			preassessmentpage.clickOnSelectedElement(logout_image_xpath, 3);
+			waitFor(3);
+			WebElement logout=driver.findElement(By.xpath(logoff_xpath));
+			preassessmentpage.waitForElement(logout, 3);
+			logout.click();
+			waitFor(10);
 	}
 }

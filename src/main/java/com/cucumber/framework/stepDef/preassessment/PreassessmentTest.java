@@ -111,5 +111,15 @@ public class PreassessmentTest {
 	public void login_with_LogPAOperator() throws Throwable {
 		preassessmentpage.loginPAOperator();
 	}
+	
+	@Given("^Resolve the case$")
+	public void resolve_the_case() throws Throwable {
+		preassessmentpage.searchAndResolveCase();
+	}
+	
+	@Then("^logout of the portal LogPA Operator$")
+	public void logout_of_the_portal_LogPA_Operator() throws Throwable {
+		preassessmentpage.logoutOfPAOperator();
+	}
 
 }

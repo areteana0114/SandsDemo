@@ -107,13 +107,13 @@
 						<!-- <suiteXmlFile>localsequentialtestng.xml</suiteXmlFile> <suiteXmlFile>localparalleltestng.xml</suiteXmlFile> 
 							<suiteXmlFile>gridparalleltestng.xml</suiteXmlFile> <suiteXmlFile>${suiteXml}</suiteXmlFile> 
 							<suiteXmlFile>src/test/java/com/cucumber/framework/testng/testNG.xml</suiteXmlFile> -->
-					  <suiteXmlFile>${suiteXml}</suiteXmlFile>   <!-- Run from jenkins -->
-						  <!-- <suiteXmlFile>testNGSequential.xml</suiteXmlFile> -->  <!-- Run from local -->
+					   <suiteXmlFile>${suiteXml}</suiteXmlFile>    <!-- Run from jenkins -->
+						  <!--  <suiteXmlFile>testNGSequential.xml</suiteXmlFile> -->   <!-- Run from local -->
 					</suiteXmlFiles>
-					 <systemPropertyVariables>
+					  <systemPropertyVariables>
 						<Browser>${browserName}</Browser>
 						<URL>${url}</URL>
-					</systemPropertyVariables>  <!-- System property part Runsfrom jenkins -->
+					</systemPropertyVariables>   <!-- System property part Runsfrom jenkins -->
 				</configuration>
 			</plugin>
 
