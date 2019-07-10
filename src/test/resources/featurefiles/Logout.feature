@@ -1,11 +1,11 @@
 Feature: Validate the logout
 
-  @smoke
+  @Smoke @Regression
   Scenario: Validate Logout scenario
     Given Steps for logout in case of failure
     Given Open the browser and navigate to the url
-    When I enter username as "csinboundagent"
-    And I enter password as "rules"
+    When I enter username as "CACSR"
+    And I enter password as "Rules@1234"
     And I click on Login button
     Then Login should be successful
     When I click on down arrow

@@ -71,6 +71,7 @@ public class CustomerServ extends SeleniumFunc implements CustomerServLoc {
 					JavascriptExecutor executor = (JavascriptExecutor)driver;
 					executor.executeScript("arguments[0].click();",WrapUpBtn);
 					//WrapUpBtn.click();
+					waitFor(3);
 				}
 			
 			//code to select service case based on parameter passed
@@ -86,6 +87,7 @@ public class CustomerServ extends SeleniumFunc implements CustomerServLoc {
 				goToFrame(AddTasksButton);
 				waitForElement(AddTasksButton,2);
 				AddTasksButton.click();
+				waitFor(10);
 			}
 
 		public void clickSubmit() {

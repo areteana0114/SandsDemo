@@ -1,6 +1,6 @@
 Feature: Pulse feature test
 
-  @Regression
+  @Reg
   Scenario: verify for the message posted in pulse functionality
     Given Steps for pulse in case of failure
     Given Open the browser and navigate to the url

@@ -57,6 +57,7 @@ public class SeleniumFunc implements SeleniumFuncLoc {
 		} catch (AWTException e) {
 			e.printStackTrace();
 		}
+		waitFor(2);
 	}
 	
 	public static String getCurrentDateTime() {

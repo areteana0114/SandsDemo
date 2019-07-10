@@ -51,7 +51,7 @@ public class PropertyFileReader implements ConfigReader{
 	}
 
 	public String getDbConnStr() {
-		return prop.getProperty("DtaBase.ConnectionStr");
+		return prop.getProperty("DataBase.ConnectionStr");
 	}
 
 	public BrowserType getBrowser() {

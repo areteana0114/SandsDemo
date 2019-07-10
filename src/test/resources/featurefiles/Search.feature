@@ -1,6 +1,6 @@
 Feature: Search feature test
 
-  @Regression
+  @Reg
   Scenario: Search for the case
     Given Steps for search in case of failure
     Given Open the browser and navigate to the url

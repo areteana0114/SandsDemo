@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
@@ -38,11 +40,13 @@ public class TestBase {
 
 	private final Logger log = LoggerHelper.getLogger(TestBase.class);
 	public static ThreadLocal<WebDriver> dr = new ThreadLocal<WebDriver>();
-	private WebDriver driver=null;
+	private  WebDriver driver=null;
 
 	
-	public WebDriver getBrowserObject(BrowserType bType) throws Exception {
+	public  WebDriver getBrowserObject(BrowserType bType) throws Exception {
+		
 		try {
+		
 			log.info(bType);
 
 			switch (bType) {
@@ -65,40 +69,52 @@ public class TestBase {
 			default:
 				throw new Exception(" Driver Not Found : " + new PropertyFileReader().getBrowser());
 			}
+			
 		} catch (Exception e) {
 			log.equals(e);
 			throw e;
 		}
+		
+		
 	}
 	
 	public void setUpDriver(BrowserType bType) throws Exception {
 		
+		System.out.println("Driver Before instantiation is: "+ driver);
 		driver = getBrowserObject(bType);
 		setWebDriver(driver);
+		System.out.println("Driver After instantiation is: "+ driver);
 		log.debug("InitializeWebDrive : " + driver.hashCode());
 		driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(), TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(ObjectRepo.reader.getImplicitWait(), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
 	
+	
 	@Before()
 	public void before() throws Exception {
+		
 		ObjectRepo.reader = new PropertyFileReader();
-		String browser=System.getProperty("Browser");
-		setUpDriver(BrowserType.valueOf(browser));  /* Run from jenkins*/
-		//setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
-		//log.info(ObjectRepo.reader.getBrowser());     //Run from Local 
+		
+		//Run from Jenkins code
+		/*	String browser=System.getProperty("Browser");
+		setUpDriver(BrowserType.valueOf(browser)); */  //Run from jenkins
+		
+		//Run from Local code
+		setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
+		log.info(ObjectRepo.reader.getBrowser());  //Run from Local 
 	}
 
+	
 	@After()
 	public void after(Scenario scenario) throws Exception {
 		 if (scenario.isFailed()) {
 	         scenario.embed(((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES), "image/png");
 	        }
-		driver.quit();
-		log.info("Browser closed");
-		
-	 }
+		 System.out.println("Driver in After Method is: "+ driver);
+		 driver.quit();
+	     log.info("Browser closed");
+	}
 	
 	
 	public static WebDriver getDriver() {

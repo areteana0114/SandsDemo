@@ -2,10 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SmokeSuite" parallel="false" >
 
-	<test name="Preassessment">
+	<test name="SandsDemo">
+
 		<classes>
-			<class name="com.cucumber.framework.runner.PreassessmentRunner" />
-		</classes>
+	 <!-- 	 	<class name="com.cucumber.framework.runner.LoginRunner" /> 
+	  <class name="com.cucumber.framework.runner.LogoutRunner" />   
+		   <class name="com.cucumber.framework.runner.ScheduleActivityRunner" />   -->
+		   
+   <class name="com.cucumber.framework.runner.CommonRunner" />   
+		  </classes>
 	</test>
 
 	

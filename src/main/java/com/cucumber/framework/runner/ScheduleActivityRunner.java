@@ -5,33 +5,23 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
 		
-features = {"classpath:featurefiles",
-		
-		
-           }, 
-glue = {
-		"classpath:com.cucumber.framework.stepDef",
-		"classpath:com.cucumber.framework.PageObjects",
+features = {"classpath:featurefiles/ServiceCases/ScheduleActivity.feature"}, 
+glue = {"classpath:com.cucumber.framework.stepDef","classpath:com.cucumber.framework.stepDef.scheduleactivity.ScheduleActivityTest",
+		"classpath:com.cucumber.framework.PageObjects","classpath:com.cucumber.framework.PageObjects.scheduleactivity",
 		"classpath:com.cucumber.framework.TestBase",
 		"classpath:com.cucumber.framework.helper",
 		}, 
-
 plugin = {"html:target/cucumber-html-report",
 		"json:target/cucumber-report/cucumber.json",
 		"pretty:target/cucumber-pretty.txt",
 		"junit:target/cucumber-results.xml"
 		},
-
 monochrome = true,
-
 dryRun = false
-
-
+//tags= {"@Smoke"}
 
 )
-public class CommonRunner extends AbstractTestNGCucumberTests {
+
+public class ScheduleActivityRunner extends  AbstractTestNGCucumberTests {
 
 }
-
-
-

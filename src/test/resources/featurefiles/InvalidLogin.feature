@@ -1,7 +1,7 @@
 Feature: Invalid Login feature test
 
   #Author U.Ramakrishna
-  @smoke
+  @Smoke
   Scenario Outline: Login with Invalid credentials
     Given Steps for login with invalid credentials "<username>" and "<password>" in case of failure
     Given Open the browser and navigate to the url

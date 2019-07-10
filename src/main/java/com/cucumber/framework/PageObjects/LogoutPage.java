@@ -41,7 +41,7 @@ public class LogoutPage extends CustomerServ implements LogoutPageLoc  {
 	    	//System.out.println("No such element present");
 	    }
 		try {
-		driver.findElement(By.xpath(down_arrow_xpath)).click();
+		driver.findElement(By.xpath(logout_icon_xpath)).click();
 		Thread.sleep(5000);
 		}catch(Exception e) {
 	    	//System.out.println("Element down arrow is not present");
@@ -50,8 +50,14 @@ public class LogoutPage extends CustomerServ implements LogoutPageLoc  {
 	
 	public void clickOnLogoutLink() {
 		driver.findElement(By.xpath(logout_xpath)).click();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		SeleniumFunc.robotClass();
-		
+		waitFor(3);
 	}
 	
 	public boolean verifyUsernameField_IsDisplayed() {

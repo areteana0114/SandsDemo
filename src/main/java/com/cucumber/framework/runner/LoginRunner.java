@@ -14,7 +14,7 @@ glue = {
 		}, 
 
 plugin = {"html:target/cucumber-html-report",
-		"json:target/cucumber.json",
+		"json:target/cucumber-report/cucumber.json",
 		"pretty:target/cucumber-pretty.txt",
 		"junit:target/cucumber-results.xml"
 		},
@@ -22,7 +22,7 @@ plugin = {"html:target/cucumber-html-report",
 monochrome = true,
 
 dryRun = false
-
+//tags= {"@Smoke"}
 )
 
 public class LoginRunner extends  AbstractTestNGCucumberTests {

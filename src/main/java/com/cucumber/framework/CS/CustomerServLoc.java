@@ -8,7 +8,7 @@ public interface CustomerServLoc {
 	String testpath="//i[@name='CPMSearch_pyDisplayHarness_2']";
 	void searchFunc(String caseid,String i);
 	String addtaskbtn_xpath="//button[@title='Add Task']";
-	String addtasksbutton_xpath="//div[@class='pzbtn-mid' and text()='Add task(s)']";
+	String addtasksbutton_xpath="//button[@class='Strong pzhc pzbutton' and text()='Add tasks']";
 	String wrapupbtn_xpath="//button[@title='Wrap Up']";
 	String caseid_xpath="//span[@class='heading_3']";
 	String workbasketlink_xpath="//h3[@class='layout-group-item-title' and text()='My workbaskets']";
