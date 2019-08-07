@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.test</groupId>
-	<artifactId>UniLeverDEMO</artifactId>
+	<artifactId>SANDSDEMO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -137,7 +137,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>UniLeverDEMO</projectName>
+							<projectName>SANDSDEMO</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
 							<cucumberOutput>${project.build.directory}/cucumber-report/cucumber.json</cucumberOutput>
 							<!-- <checkBuildResult>true</checkBuildResult> -->
