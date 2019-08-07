@@ -97,12 +97,12 @@ public class TestBase {
 		ObjectRepo.reader = new PropertyFileReader();
 		
 		//Run from Jenkins code
-	/*	String browser=System.getProperty("Browser");
-		setUpDriver(BrowserType.valueOf(browser));*/   //Run from jenkins
+		String browser=System.getProperty("Browser");
+		setUpDriver(BrowserType.valueOf(browser));   //Run from jenkins
 		
 		//Run from Local code
-		setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
-		log.info(ObjectRepo.reader.getBrowser());  //Run from Local 
+	//	setUpDriver(ObjectRepo.reader.getBrowser());  //Run from Local
+	//	log.info(ObjectRepo.reader.getBrowser());  //Run from Local 
 	}
 
 	

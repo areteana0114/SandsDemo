@@ -35,8 +35,8 @@ public class LoginTest {
 	@Given("^Open the browser and navigate to the url$")
 	public void open_the_browser_and_navigate_to_the_url() throws Throwable {
 		//System.out.println("Before driver instantiation: "+TestBase.getDriver());
-		TestBase.getDriver().get(ObjectRepo.reader.getWebsite()); //Run from local
-	//	TestBase.getDriver().get(System.getProperty("URL"));  //Run from jenkins
+	//	TestBase.getDriver().get(ObjectRepo.reader.getWebsite()); //Run from local
+		TestBase.getDriver().get(System.getProperty("URL"));  //Run from jenkins
 		loginpage=new LoginPage(TestBase.getDriver());
 		loginpage.sendLoginObject(loginpage);
 		//System.out.println("After driver instantiation: " +TestBase.getDriver());
