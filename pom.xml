@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.test</groupId>
-	<artifactId>SANDSDEMO</artifactId>
+	<artifactId>UniLeverDEMO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -79,7 +79,11 @@
 			<version>6.9.10</version>
 		</dependency>
 
-
+<dependency>
+	<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>3.8.0</version>
+</dependency>
 
 
 
@@ -106,25 +110,25 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.17</version>
 				<configuration>
-				  <testFailureIgnore>true</testFailureIgnore> 
+				 <!--  <testFailureIgnore>true</testFailureIgnore>  --> <!-- comment this or make this false,otherwise jenkins build results will show success even there are failures in the build -->
 					<suiteXmlFiles>
 						<!-- <suiteXmlFile>localsequentialtestng.xml</suiteXmlFile> <suiteXmlFile>localparalleltestng.xml</suiteXmlFile> 
 							<suiteXmlFile>gridparalleltestng.xml</suiteXmlFile> <suiteXmlFile>${suiteXml}</suiteXmlFile> 
 							<suiteXmlFile>src/test/java/com/cucumber/framework/testng/testNG.xml</suiteXmlFile> -->
-					  <!--  <suiteXmlFile>${suiteXml}</suiteXmlFile>  -->    <!-- Run from jenkins -->
-						   <suiteXmlFile>testNGSequential.xml</suiteXmlFile>  <!-- Run from local -->
+					     <suiteXmlFile>${suiteXml}</suiteXmlFile>     <!-- Run from jenkins -->
+						 <!--  <suiteXmlFile>testNGSequential.xml</suiteXmlFile>  -->  <!-- Run from local -->
 					</suiteXmlFiles>
-					<!--  <systemPropertyVariables>
+				   <systemPropertyVariables>
 					  	<Browser>${browserName}</Browser>
 						<URL>${url}</URL>
-					</systemPropertyVariables> -->  <!-- System property part Runs from jenkins -->             
+					</systemPropertyVariables>  <!-- System property part Runs from jenkins -->             
 				</configuration>
 			</plugin>
 
 		 <plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>2.0.0</version>
+				<version>3.8.0</version>
 				<executions>
 					<execution>
 						<id>execution</id>
@@ -133,17 +137,17 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>sandsdemo</projectName>
+							<projectName>UniLeverDEMO</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
 							<cucumberOutput>${project.build.directory}/cucumber-report/cucumber.json</cucumberOutput>
 							<!-- <checkBuildResult>true</checkBuildResult> -->
-						<buildNumber>1</buildNumber>
+						<!-- <buildNumber>1</buildNumber> -->
 						</configuration>
 					</execution>
 				</executions>
 			</plugin> 
 
-<plugin>
+<!-- <plugin>
 				<groupId>com.trivago.rta</groupId>
 				<artifactId>cluecumber-report-plugin</artifactId>
 				<version>1.0.0</version>
@@ -160,7 +164,7 @@
 					<sourceJsonReportDirectory>${project.build.directory}\cucumber-report</sourceJsonReportDirectory>
 					<generatedHtmlReportDirectory>${project.build.directory}\test-report</generatedHtmlReportDirectory>
 				</configuration>
-			</plugin>
+			</plugin> -->
 
 
 

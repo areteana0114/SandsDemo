@@ -163,6 +163,7 @@ public class ScheduleActivityPage extends CustomerServ implements ScheduleActivi
 	public void clickOnSubmitInWrapUpScreen() {
 		
 		WebElement submit_btn_wrapup=driver.findElement(By.xpath(submit_button_Wrapupscreen_xpath));
+		waitFor(3);
 		scheduleactivitypage.waitForElement(submit_btn_wrapup, 3);
 		submit_btn_wrapup.click();
 		
@@ -171,6 +172,7 @@ public class ScheduleActivityPage extends CustomerServ implements ScheduleActivi
 	
 	public void clickWBResultsRow(String caseid) {
 		String xpathstart="//*[@id='$PpgRepPgSubSectionCPMMyWorkBasketListBB$ppxResults$l";
+		                            //$PpgRepPgSubSectionCPMMyWorkBasketListBB$ppxResults$l1
 		String xpathend="']/td[1]/div/span";
 		for(int i=1;i<=100;i++) {
 			WebElement caseID=driver.findElement(By.xpath(xpathstart+i+xpathend));

@@ -2,14 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SmokeSuite" parallel="false" >
 
-	<test name="SandsDemo">
+	<test name="UnileverDemo">
 
 		<classes>
-	 <!-- 	 	<class name="com.cucumber.framework.runner.LoginRunner" /> 
-	  <class name="com.cucumber.framework.runner.LogoutRunner" />   
-		   <class name="com.cucumber.framework.runner.ScheduleActivityRunner" />   -->
+		<!--  	<class name="com.cucumber.framework.runner.LoginRunner" /> 
+	  <class name="com.cucumber.framework.runner.LogoutRunner" />   --> 
+		   <class name="com.cucumber.framework.runner.ScheduleActivityRunner" />  
 		   
-   <class name="com.cucumber.framework.runner.CommonRunner" />   
+  <!--  <class name="com.cucumber.framework.runner.CommonRunner" />   --> 
 		  </classes>
 	</test>
 

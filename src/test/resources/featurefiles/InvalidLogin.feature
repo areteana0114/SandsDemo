@@ -13,4 +13,4 @@ Feature: Invalid Login feature test
     Examples: 
       | username       | password |
       | Rama           | rules    |
-      | csinboundagent | rules    |
+      #| csinboundagent | rules    |
