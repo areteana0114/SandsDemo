@@ -64,7 +64,7 @@ public class LoginPage extends CustomerServ implements LoginPageLoc{
 	
 	public void verifyMsg() {
 		
-		Assert.assertTrue(driver.findElement(By.xpath(verify_msg_xpath)).getText().equalsIgnoreCase("UnileverCS"),"Login is not successful");	
+		Assert.assertTrue(driver.findElement(By.xpath(verify_msg_xpath)).getText().equalsIgnoreCase("Customer service"),"Login is not successful");	
 		
 	}
 	

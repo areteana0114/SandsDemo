@@ -171,7 +171,7 @@ public class ScheduleActivityPage extends CustomerServ implements ScheduleActivi
 	}
 	
 	public void clickWBResultsRow(String caseid) {
-		String xpathstart="//*[@id='$PpgRepPgSubSectionCPMMyWorkBasketListBB$ppxResults$l";
+		String xpathstart="//tr[@id='$PpgRepPgSubSectionCPMMyWorkBasketListBB$ppxResults$l";
 		                            //$PpgRepPgSubSectionCPMMyWorkBasketListBB$ppxResults$l1
 		String xpathend="']/td[1]/div/span";
 		for(int i=1;i<=100;i++) {

@@ -118,6 +118,7 @@ public class CustomerServ extends SeleniumFunc implements CustomerServLoc {
 				viewQueueForDropdown.click();
 				Select s=new Select(viewQueueForDropdown);
 				s.selectByVisibleText(value);
+				waitFor(3);
 				}
 			
 			public void clickWBResultsRow(String caseid) {

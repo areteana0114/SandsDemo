@@ -24,7 +24,7 @@ public interface ScheduleActivityPageLoc {
 	String assign_to_dd_xpath="//select[@title='Select routing option']";
 	String workbasket_dd_xpath="//select[@title='Select workbasket']";
 	String notes_textarea_xpath="//span[@id='CTRL_TA']";
-	String submit_button_Wrapupscreen_xpath="//button[@title='Complete this assignment']//div[text()='Submit']";
+	String submit_button_Wrapupscreen_xpath="//button[@name='CAWrapUp_pyWorkPage_10' and @title='Complete this assignment']";
 	String confirm_msg_xpath="//div[@data-expr-id='435280bb580d6d7e48baa9185eeaaad8460701ef_7']";
 	String confirm_button_xpath="//button[@title='Confirm' and text()='Confirm']";
 	String resolve_xpath="//span[@class='col-3']/label[@for='47f6b90aResolve']";
