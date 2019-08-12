@@ -31,7 +31,7 @@ Feature: Validate the Schedule Activity feature.
     And Click on Wrap Up
     And Click on Submit button in wrap up sccreen
     And Select "Inbound correspondence" from the View Queue for workbasket
-    And Open the required Case Id by clicking on "S-140" link
+    And Open the required Case Id by clicking on "S-143" link
     And Select "Resolve" in Resolve work screen
     # And Enter "comments" in note field
     And Click on Submit button
@@ -75,5 +75,5 @@ Feature: Validate the Schedule Activity feature.
 
     Examples: 
       | TaskType               | LinkAccount                              | CaseId |
-      | Incorrect Billing      | Personal Checking : 12345678             | S-141  |
-      | Research Credit Issues | Platinum Rewards Card : 7895543245678901 | S-142  |
+      | Incorrect Billing      | Personal Checking : 12345678             | S-144  |
+      | Research Credit Issues | Platinum Rewards Card : 7895543245678901 | S-145  |
